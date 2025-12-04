@@ -1,1 +1,1 @@
-# Globant-Piscine-FullStack---Image-Gallery
+reacting and tailwinding. Docker is my worst enemy
