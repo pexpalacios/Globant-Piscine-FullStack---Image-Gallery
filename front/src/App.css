@@ -1,13 +1,22 @@
+:root{
+  --background-color: #f0f0f0;
+  --background-color-alt: #e0e0e0;
+  --text-color: #333333;
+  --primary-color: #c9ab5f;
+  --secondary-color: #64b5e1;
+  --button-background: #363530;
+  --button-hover-border: #ffea64;
+}
+
 #root {
-  width: 100%;
   height: 100%;
-  background-color: #eee;
+  width: 100%;
+  background-color: var(--background-color);
 }
 
-.card {
-  padding: 2em;
+.mode {
+  dark ? "dark bg-gray-900 text-white min-h-screen" : "bg-white min-h-screen";
 }
-
 
 /* Top bar */
 
@@ -19,7 +28,7 @@
 	max-height: 30px;
 	padding: 3em;
 	gap: 1em;
-	background-color: #aaa;
+	background-color: var(--background-color-alt);
 }
 
 .logo {
@@ -29,6 +38,140 @@
   transition: filter 300ms;
 }
 
-.logo:hover {
+/* Main */
+
+.main-content {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  gap: 8px;
+  justify-items: center;
+  align-items: center;
+  padding: 2em;
+  height: 100%;
+}
+
+/* Right content*/
+
+.right-content {
+  width: 100%;
+  height: 100%;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: var(--background-color-alt);
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid var(--button-background);
+  border-radius: 4px;
+}
+
+.search-bar button {
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* make it pages instead of load more, don't like it */
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.load-more button {
+ padding: 0.5em 1em;
+  margin-left: 0.5em;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.gallery
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+  max-height: 700px;
+  background-color: var(--background-color-alt);
+}
+/* make it so the images ahve their original sizes */
+.gallery img {
+  border-radius: 8px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  transition: filter 300ms;
+}
+
+/*make a pop-in effect for the images*/
+.gallery img:hover {
   filter: drop-shadow(0 0 2em #fafbffaa);
 }
+
+/* Side bar*/
+
+.sidebar
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 80%;
+  height: 45%;
+  border-radius: 50%;
+  background-color: var(--background-color-alt);
+  margin: 1em;
+}
+
+.username {
+  width: 70%;
+  height: 10%;
+  color: var(--text-color);
+  margin: 1em;
+}
+
+.login-button {
+  width: 70%;
+  height: 7%;
+  background-color: var(--button-background);
+  border: none;
+  border-radius: 5px;
+  margin: 1em;
+}
+
+
